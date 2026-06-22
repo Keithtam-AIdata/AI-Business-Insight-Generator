@@ -1,4 +1,10 @@
 import pandas as pd
+from dotenv import load_dotenv
+from openai import OpenAI
+
+load_dotenv()
+
+client = OpenAI()
 
 df = pd.read_excel("data/sales_data.xlsx")
 
@@ -98,3 +104,40 @@ with open("executive_summary.txt", "w") as file:
     file.write(report)
 
 print("Report exported successfully.")
+business_data = f"""
+Total Revenue: ${total_revenue:,.0f}
+Average Revenue: ${average_revenue:,.0f}
+
+Best Month: {best_month['Month']} (${best_month['Revenue']:,.0f})
+Worst Month: {worst_month['Month']} (${worst_month['Revenue']:,.0f})
+
+Revenue increased in {positive_months} months and declined in {negative_months} months.
+"""
+
+prompt = f"""
+You are a senior business analyst.
+
+Based on the following business metrics, write a professional executive summary with:
+- Period overview
+- Key highlights
+- Interpretation
+- Recommended next steps
+- Conclusion
+
+{business_data}
+"""
+
+response = client.responses.create(
+    model="gpt-5-mini",
+    input=prompt
+)
+
+ai_summary = response.output_text
+
+with open("ai_executive_summary.txt", "w", encoding="utf-8") as file:
+    file.write(ai_summary)
+
+print("\nAI Executive Summary")
+print(ai_summary)
+
+print("\nAI report generated successfully.")

@@ -27,4 +27,9 @@ response = client.responses.create(
     input=prompt
 )
 
-print(response.output_text)
+summary = response.output_text
+
+with open("ai_executive_summary.txt", "w", encoding="utf-8") as file:
+    file.write(summary)
+
+print("AI report generated successfully.")
