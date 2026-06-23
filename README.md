@@ -2,7 +2,9 @@
 
 ## Overview
 
-This project analyzes Excel sales data and automatically generates executive summaries using Python.
+AI Business Insight Generator is a Python-based analytics application that automates business performance reporting.
+
+The solution reads Excel sales data, calculates key business metrics, generates revenue visualizations, and uses OpenAI API to create executive-level business summaries automatically.
 
 ## Revenue Trend
 
@@ -18,7 +20,37 @@ Example output:
 
 ## Business Problem
 
-Business users often spend time manually reviewing sales reports and summarizing key trends.
+Business users often spend significant time manually reviewing sales reports and preparing management summaries.
+
+This project demonstrates how AI can be integrated into a data analytics workflow to automate reporting and provide business insights.
+
+## Solution Architecture
+
+Excel Dataset
+
+↓
+
+Python + Pandas
+
+↓
+
+Business KPI Calculation
+
+↓
+
+Revenue Visualization
+
+↓
+
+OpenAI API
+
+↓
+
+Executive Summary Generation
+
+↓
+
+Automated Report Output
 
 ## Solution
 
@@ -39,19 +71,20 @@ This application:
 - Git
 - GitHub
 
-## Sample Output
+## Project Workflow
 
-Revenue reached $1,065,000 across the reporting period.
+-Read Excel sales dataset
+-Calculate revenue KPIs
+-Generate trend visualization
+-Send business metrics to OpenAI API
+-Generate executive summary
+-Export reports automatically
 
-The strongest month was Aug with revenue of $165,000.
-
-Revenue increased in 5 months and declined in 2 months.
-
-Overall, revenue showed a generally positive trend.
 
 ## Future Enhancements
 
-- OpenAI API integration
-- AI-generated management commentary
-- Interactive dashboard
-- PDF report generation
+-Interactive dashboard
+-Power BI integration
+-Forecasting models
+-AI Business Analyst Assistant
+-Automated PDF reporting
