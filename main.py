@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -100,7 +101,10 @@ The strongest month was {best_month['Month']} with revenue of ${best_month['Reve
 Revenue increased in {positive_months} months and declined in {negative_months} months.
 """
 
-with open("executive_summary.txt", "w") as file:
+with open(
+    "output/executive_summary.txt",
+    "w"
+) as file:
     file.write(report)
 
 print("Report exported successfully.")
@@ -134,10 +138,32 @@ response = client.responses.create(
 
 ai_summary = response.output_text
 
-with open("ai_executive_summary.txt", "w", encoding="utf-8") as file:
+with open(
+    "output/ai_executive_summary.txt", "w", encoding="utf-8") as file:
     file.write(ai_summary)
 
 print("\nAI Executive Summary")
 print(ai_summary)
 
 print("\nAI report generated successfully.")
+plt.figure(figsize=(8, 5))
+
+plt.plot(
+    df["Month"],
+    df["Revenue"],
+    marker="o"
+)
+
+plt.title("Revenue Trend")
+plt.xlabel("Month")
+plt.ylabel("Revenue ($)")
+plt.grid(True)
+
+plt.savefig(
+    "output/revenue_trend.png",
+    bbox_inches="tight"
+)
+
+plt.close()
+
+print("Revenue chart generated successfully.")
