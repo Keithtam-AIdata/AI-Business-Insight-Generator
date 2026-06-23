@@ -73,18 +73,18 @@ This application:
 
 ## Project Workflow
 
--Read Excel sales dataset
--Calculate revenue KPIs
--Generate trend visualization
--Send business metrics to OpenAI API
--Generate executive summary
--Export reports automatically
+- Read Excel sales dataset
+- Calculate revenue KPIs
+- Generate trend visualization
+- Send business metrics to OpenAI API
+- Generate executive summary
+- Export reports automatically
 
 
 ## Future Enhancements
 
--Interactive dashboard
--Power BI integration
--Forecasting models
--AI Business Analyst Assistant
--Automated PDF reporting
+- Interactive dashboard
+- Power BI integration
+- Forecasting models
+- AI Business Analyst Assistant
+- Automated PDF reporting
