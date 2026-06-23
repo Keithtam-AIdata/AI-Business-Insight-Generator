@@ -4,6 +4,10 @@
 
 This project analyzes Excel sales data and automatically generates executive summaries using Python.
 
+## Revenue Trend
+
+![Revenue Trend](output/revenue_trend.png)
+
 ## AI Executive Summary Example
 
 This project uses OpenAI API to generate business insights automatically.
